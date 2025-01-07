@@ -1,11 +1,11 @@
 // App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './pages/Login';
-import Home from './pages/Home';
-import Messages from './pages/Messages';
-import Profile from './pages/Profile';
-import Navbar from './components/Navbar';
+import Login from './src/pages/Login';
+import Home from './src/pages/Home';
+import Messages from './src/pages/Messages';
+import Profile from './src/pages/Profile';
+import Navbar from './src/components/Navbar';
 
 function App() {
   return (
