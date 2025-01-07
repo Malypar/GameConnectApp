@@ -1,25 +1,21 @@
-// App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './src/pages/Login';
-import Home from './src/pages/Home';
-import Messages from './src/pages/Messages';
-import Profile from './src/pages/Profile';
-import Navbar from './src/components/Navbar';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './src/HomeScreen';
+import GamesList from './src/GamesList'; // Example of another screen
 
-function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <Router>
-      {/* We can conditionally show a navigation bar if user is logged in */}
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-    </Router>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="GamesList" component={GamesList} />
+        {/* Add more screens as needed */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
 export default App;
